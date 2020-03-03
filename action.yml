@@ -6,7 +6,7 @@ inputs:
   namespace:
     description: The Docker Hub namespace where the image is in.
     required: false
-    default: robertdebock
+    default: normo
   image:
     description: The image you want to run on.
     required: false
@@ -18,10 +18,10 @@ inputs:
   options:
     description: Options you can pass to [`tox`](https://tox.readthedocs.io/en/latest/), for example `--parallel all`.
     required: false
- 
+
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:2.0.0'
+  image: 'docker://normo/github-action-molecule:add-jmespath'
   env:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
@@ -29,6 +29,5 @@ runs:
     options: ${{ inputs.options }}
 
 branding:
-  icon: play  
+  icon: play
   color: green
-
